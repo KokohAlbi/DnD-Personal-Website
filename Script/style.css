@@ -257,3 +257,123 @@ footer {
     color: #8a8073;
     font-size: 14px;
 }
+#quest-board {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 28px;
+    color: #c89d36;
+    margin-bottom: 5px;
+}
+
+.section-subtitle {
+    color: #a099b2;
+    margin-bottom: 35px;
+    font-size: 14px;
+}
+
+/* Flexbox Layout untuk Card */
+.quest-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.quest-card {
+    background-color: #14121a;
+    border: 1px solid #3d3428;
+    border-radius: 10px;
+    padding: 25px;
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quest-card:hover {
+    transform: translateY(-8px);
+    border-color: #c89d36;
+    box-shadow: 0 8px 25px rgba(200, 157, 54, 0.2);
+}
+
+/* Card Spesial / Featured */
+.quest-card.featured {
+    border: 2px solid #c89d36;
+    background-color: #1a1622;
+    box-shadow: 0 0 20px rgba(200, 157, 54, 0.15);
+}
+
+/* Rank Badges */
+.quest-rank {
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 20px;
+    display: inline-block;
+    align-self: center;
+    margin-bottom: 15px;
+}
+
+.rank-bronze { background: #5c3a21; color: #e6a87c; }
+.rank-silver { background: #3a4146; color: #d1d5db; }
+.rank-gold   { background: #5a430d; color: #ffd700; }
+
+.quest-card h3 {
+    margin: 5px 0 10px 0;
+    color: #e2d9c8;
+}
+
+.quest-desc {
+    font-size: 13px;
+    color: #8c859b;
+    min-height: 40px;
+}
+
+.quest-price {
+    font-size: 30px;
+    font-weight: bold;
+    color: #c89d36;
+    margin: 15px 0;
+}
+
+.quest-price span {
+    font-size: 12px;
+    color: #8c859b;
+    display: block;
+}
+
+.quest-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    font-size: 13px;
+    color: #b3ace0;
+    text-align: left;
+}
+
+.quest-features li {
+    padding: 6px 0;
+    border-bottom: 1px dashed #282333;
+}
+
+/* Button */
+.btn-quest {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #c89d36;
+    border: 1px solid #c89d36;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-quest:hover, .btn-quest.highlight {
+    background-color: #c89d36;
+    color: #0f0e13;
+}
