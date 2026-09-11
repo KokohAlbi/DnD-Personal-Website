@@ -108,12 +108,13 @@ nav a:hover {
     overflow: hidden;
     border: 2px solid #3d3428;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s;
+    transition: transform 0.3s ease, border-color 0.3s ease; 
 }
 
 #highlight .box:hover {
-    transform: translateY(-5px);
-    border-color: #c89d36;
+    transform: translateY(-8px); /* Card agak terangkat */
+    border-color: #c89d36; /* Border berubah jadi emas menyala */
+    box-shadow: 0 8px 20px rgba(200, 157, 54, 0.2);
 }
 
 #highlight .box img {
@@ -212,6 +213,7 @@ nav a:hover {
     border: 1px solid #3d3428;
     box-sizing: border-box;
     text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .testi-card img {
@@ -221,6 +223,7 @@ nav a:hover {
     border: 2px solid #c89d36; 
     object-fit: cover;
     margin-bottom: 10px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .testi-card h3 {
@@ -235,6 +238,16 @@ nav a:hover {
     line-height: 1.5;
 }
 
+.testi-card:hover {
+    transform: translateY(-8px);
+    border-color: #c89d36;
+    box-shadow: 0 8px 25px rgba(200, 157, 54, 0.2);
+}
+
+.testi-card:hover img {
+    transform: scale(1.08);
+    border-color: #ffffff;
+}
 footer {
     margin-top: 50px;
     padding-top: 20px;
