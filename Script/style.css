@@ -377,3 +377,91 @@ footer {
     background-color: #c89d36;
     color: #0f0e13;
 }
+dialog#quest-modal {
+    border: 2px solid #c89d36;
+    background-color: #0f0e13;
+    color: #e2d9c8;
+    border-radius: 12px;
+    padding: 0;
+    max-width: 450px;
+    width: 90%;
+    box-shadow: 0 0 30px rgba(200, 157, 54, 0.35);
+}
+
+/* Latar Belakang Gelap (Overlay) Saat Modal Terbuka */
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.82);
+    backdrop-filter: blur(4px);
+}
+
+/* Isi Konten Modal */
+.modal-content {
+    padding: 25px;
+    position: relative;
+    text-align: center;
+}
+
+/* Tombol Close (X) di Pojok Kanan Atas */
+#close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #a099b2;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+#close-modal:hover {
+    color: #c89d36;
+}
+
+/* Box Detail Persyaratan */
+.modal-details {
+    text-align: left;
+    background: #14121a;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    border: 1px solid #282333;
+}
+
+.modal-details h4 {
+    margin: 0 0 10px 0;
+    color: #c89d36;
+    font-size: 13px;
+}
+
+#modal-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    color: #b3ace0;
+}
+
+#modal-features li {
+    padding: 4px 0;
+    border-bottom: 1px dashed #221d2b;
+}
+
+/* Tombol Konfirmasi Kontrak */
+#btn-confirm-quest {
+    width: 100%;
+    padding: 12px;
+    background: #c89d36;
+    color: #0f0e13;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+#btn-confirm-quest:hover {
+    background: #e6b84c;
+    transform: translateY(-1px);
+}

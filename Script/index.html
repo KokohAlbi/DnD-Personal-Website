@@ -92,7 +92,7 @@
                 <li>Penyelesaian 2 Hari</li>
                 <li>Laporan Standar</li>
             </ul>
-            <a href="#" class="btn-quest">Ambil Kontrak</a>
+            <button class="btn-quest" onclick="openQuestModal('Goblin Patrol', 'Bronze Rank', 'rank-bronze', '50 <span>Gold Pieces</span>', 'Pembersihan area sekitar desa dari gangguan goblin lokal.', ['1 Level 3 Adventurer', 'Penyelesaian 2 Hari', 'Laporan Standar'])">Ambil Kontrak</button>
         </div>
 
         <!-- Quest 2 (Featured) -->
@@ -106,7 +106,7 @@
                 <li>Termasuk Support/Healer</li>
                 <li>Loot Distribution Agreement</li>
             </ul>
-            <a href="#" class="btn-quest highlight">Ambil Kontrak</a>
+            <button class="btn-quest highlight" onclick="openQuestModal('Dungeon Raid', 'Gold Rank', 'rank-gold', '250 <span>Gold Pieces</span>', 'Penjelajahan dungeon kuno dan penumpasan sisa-sisa monster boss.', ['Full Balanced Party (4 Orang)', 'Termasuk Support/Healer', 'Loot Distribution Agreement'])">Ambil Kontrak</button>
         </div>
 
         <!-- Quest 3 -->
@@ -120,7 +120,7 @@
                 <li>Peralatan Tempur Lengkap</li>
                 <li>Jaminan Keamanan Barang</li>
             </ul>
-            <a href="#" class="btn-quest">Ambil Kontrak</a>
+            <button class="btn-quest" onclick="openQuestModal('Escort Duty', 'Silver Rank', 'rank-silver', '120 <span>Gold Pieces</span>', 'Pengawalan caravan dagang menembus wilayah pegunungan rawan.', ['2 Level 5 Veteran Guards', 'Peralatan Tempur Lengkap', 'Jaminan Keamanan Barang'])">Ambil Kontrak</button>
         </div>
     </div>
 </div>
@@ -143,5 +143,48 @@
         </div>
     </div>
 </div>
+<dialog id="quest-modal">
+        <div class="modal-content">
+            <button id="close-modal">&times;</button>
+            <span id="modal-rank" class="quest-rank">Rank</span>
+            <h2 id="modal-title">Nama Quest</h2>
+            <p id="modal-price" class="quest-price">0 <span>Gold Pieces</span></p>
+            <p id="modal-desc" class="quest-desc">Deskripsi...</p>
+            
+            <div class="modal-details">
+                <h4>📋 Detail Kontrak:</h4>
+                <ul id="modal-features"></ul>
+            </div>
+
+            <button id="btn-confirm-quest" onclick="alert('Kontrak berhasil diambil!')">Konfirmasi Terima Kontrak</button>
+        </div>
+    </dialog>
+    <script>
+        const modal = document.getElementById('quest-modal');
+        const closeModal = document.getElementById('close-modal');
+
+        function openQuestModal(title, rankText, rankClass, price, desc, features) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-rank').innerText = rankText;
+            document.getElementById('modal-rank').className = 'quest-rank ' + rankClass;
+            document.getElementById('modal-price').innerHTML = price;
+            document.getElementById('modal-desc').innerText = desc;
+
+            const list = document.getElementById('modal-features');
+            list.innerHTML = '';
+            features.forEach(item => {
+                const li = document.createElement('li');
+                li.innerText = item;
+                list.appendChild(li);
+            });
+
+            modal.showModal();
+        }
+
+        closeModal.addEventListener('click', () => modal.close());
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) modal.close();
+        });
+    </script>
 </body>
 </html>
