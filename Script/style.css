@@ -465,3 +465,106 @@ dialog::backdrop {
     background: #e6b84c;
     transform: translateY(-1px);
 }
+dialog#client-modal {
+    border: 2px solid #c89d36;
+    background-color: #0f0e13;
+    color: #e2d9c8;
+    border-radius: 12px;
+    padding: 0;
+    max-width: 400px;
+    width: 85%;
+    box-shadow: 0 0 35px rgba(200, 157, 54, 0.4);
+}
+
+.client-modal-content {
+    padding: 25px;
+    text-align: center;
+}
+
+#close-client-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #a099b2;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#close-client-modal:hover {
+    color: #c89d36;
+}
+
+#modal-client-img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #c89d36;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+#modal-client-name {
+    margin: 5px 0;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+#modal-client-role {
+    display: inline-block;
+    color: #c89d36;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+#modal-client-desc {
+    font-size: 13px;
+    color: #a099b2;
+    line-height: 1.6;
+    background: #14121a;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #282333;
+}
+
+.client-box img {
+    cursor: pointer;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.client-box img:hover {
+    transform: translateY(-6px) scale(1.03);
+    border-color: #c89d36;
+    box-shadow: 0 8px 20px rgba(200, 157, 54, 0.3);
+}
+
+dialog#client-modal,
+dialog#quest-modal {
+
+    animation: modalSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes modalSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+dialog::backdrop {
+    animation: backdropFadeIn 0.3s ease forwards;
+}
+
+@keyframes backdropFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

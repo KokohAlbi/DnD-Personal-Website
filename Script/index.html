@@ -45,12 +45,12 @@
         <div id="clients">
             <h2>Our Client</h2>
             <div class="client-list">
-                <div class="client-box"><img src="images/human.jpg" alt="Client 1" /></div>
-                <div class="client-box"><img src="images/bar.jpg" alt="Client 2" /></div>
-                <div class="client-box"><img src="images/bard.webp" alt="Client 3" /></div>
-                <div class="client-box"><img src="images/paladin.png" alt="Client 4" /></div>
-                <div class="client-box"><img src="images/mino.webp" alt="Client 5" /></div>
-                <div class="client-box"><img src="images/elf.webp" alt="Client 6" /></div>
+                <div class="client-box"><img src="images/human.jpg" alt="Client 1" style="cursor: pointer;" onclick="openClientModal('images/human.jpg', 'Sir Arthur Pendelton', 'Human Paladin', 'Komandan Pasukan Kerajaan yang sering menyewa anggota guild untuk misi pengawalan dan operasi militer khusus.')"></div>
+<div class="client-box"><img src="images/bar.jpg" alt="Client 2" style="cursor: pointer;" onclick="openClientModal('images/bar.jpg', 'Lady Lyra Vance', 'Tavern Keeper', 'Pemilik kedai Dragons Rest yang selalu punya info quest rahasia dan suplai perbekalan terbaik.')"></div>
+<div class="client-box"><img src="images/bard.webp" alt="Client 3" style="cursor: pointer;" onclick="openClientModal('images/bard.webp', 'Gimble Sparklegym', 'Gnome Bard', 'Penulis sejarah guild yang mencatat setiap petualangan dan kisah sukses anggota party.')"></div>
+<div class="client-box"><img src="images/paladin.png" alt="Client 4" style="cursor: pointer;" onclick="openClientModal('images/paladin.png', 'Aethelgard', 'Construct Sentinel', 'Penjaga gerbang utama guild yang menangani pendaftaran kontrak kelas berat.')"></div>
+<div class="client-box"><img src="images/mino.webp" alt="Client 5" style="cursor: pointer;" onclick="openClientModal('images/mino.webp', 'Brakkas Thunderhoof', 'Minotaur Chieftain', 'Pemimpin suku yang bekerja sama dengan guild untuk mengamankan jalur perdagangan pegunungan.')"></div>
+<div class="client-box"><img src="images/elf.webp" alt="Client 6" style="cursor: pointer;" onclick="openClientModal('images/elf.webp', 'Elora Whisperwind', 'Elf Ranger', 'Ahli pelacak jejak yang sering meminta bantuan guild untuk mengatasi ancaman di hutan terlarang.')"></div>
             </div>
         </div>
         <div id="testimonials">
@@ -159,6 +159,15 @@
             <button id="btn-confirm-quest" onclick="alert('Kontrak berhasil diambil!')">Konfirmasi Terima Kontrak</button>
         </div>
     </dialog>
+    <dialog id="client-modal">
+        <div class="modal-content client-modal-content">
+            <button id="close-client-modal">&times;</button>
+            <img id="modal-client-img" src="" alt="Client Photo">
+            <h2 id="modal-client-name">Nama Client</h2>
+            <span id="modal-client-role">Role Client</span>
+            <p id="modal-client-desc">Deskripsi client...</p>
+        </div>
+    </dialog>
     <script>
         const modal = document.getElementById('quest-modal');
         const closeModal = document.getElementById('close-modal');
@@ -184,6 +193,22 @@
         closeModal.addEventListener('click', () => modal.close());
         modal.addEventListener('click', (e) => {
             if (e.target === modal) modal.close();
+        });
+        const clientModal = document.getElementById('client-modal');
+        const closeClientModal = document.getElementById('close-client-modal');
+
+        function openClientModal(imgSrc, name, role, desc) {
+            document.getElementById('modal-client-img').src = imgSrc;
+            document.getElementById('modal-client-name').innerText = name;
+            document.getElementById('modal-client-role').innerText = role;
+            document.getElementById('modal-client-desc').innerText = desc;
+
+            clientModal.showModal();
+        }
+
+        closeClientModal.addEventListener('click', () => clientModal.close());
+        clientModal.addEventListener('click', (e) => {
+            if (e.target === clientModal) clientModal.close();
         });
     </script>
 </body>
